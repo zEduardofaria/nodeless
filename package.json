@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "linux": "^4.2.1",
+    "sharp": "^0.25.4"
+  },
+  "name": "nodeless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:zEduardofaria/nodeless.git",
+  "author": "Eduardo Faria <z.eduardofaria@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "predeploy": "rm -rf node_modules/sharp && SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux --libc=glibc sharp",
+    "deploy": "serverless deploy --verbose --aws-profile=nodeless",
+    "postdeploy": "rm -rf node_modules/sharp && SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install --arch=x64 --platform=linux --libc=glibc sharp"
+  }
+}

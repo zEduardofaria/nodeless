@@ -19,16 +19,16 @@ functions:
   hello:
     handler: optimize.hello
     environment:
-      bucket: nodeless
+      bucket: eduardo-nodeless-bucket
     events:
       - s3:
-          bucket: nodeless
+          bucket: eduardo-nodeless-bucket
           event: s3:ObjectCreated:*
           rules:
             - prefix: uploads/
             - suffix: .jpg
       - s3:
-          bucket: nodeless
+          bucket: eduardo-nodeless-bucket
           event: s3:ObjectCreated:*
           rules:
             - prefix: uploads/

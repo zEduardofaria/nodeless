@@ -87,7 +87,7 @@ $ yarn deploy
 
 The following tools were used in the construction of the project:
 
-#### **Server** ([NodeJS](https://nodejs.org/en/) + [TypeScript](https://www.typescriptlang.org/))
+#### **Server** ([NodeJS](https://nodejs.org/en/))
 
 - **[Node](https://nodejs.org/)**
 - **[Serverless](https://www.serverless.com/)**

@@ -22,12 +22,12 @@ module.exports.hello = async ({ Records: records }, context) => {
           .toFormat('jpeg', { progressive: true, quality: 50 })
           .toBuffer()
         
-        await S3.putObject({
+        const res = await S3.putObject({
           Body: optimized,
           Bucket: process.env.bucket,
           ContentType: 'image/jpeg',
-          Key: `compressed/${basename(key, extname(key))}`
-        })
+          Key: `compressed/${basename(key, extname(key))}.jpg`
+        }).promise()
       })
     )
     
